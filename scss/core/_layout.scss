@@ -1,0 +1,81 @@
+@-ms-viewport {
+    width: device-width;
+}
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    max-width: $container-max-width;
+    margin: auto;
+    background: $black-00;
+    @include text (var(--body16-fz), $normal, var(--body16-lh), $white-00);
+    @include customscroll();
+    scroll-behavior: smooth;
+    --pdSection: 80px 0 60px;
+    overflow-x: hidden;
+    .container-fluid {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 8rem;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .pd {
+        padding: var(--pdSection);
+        &--2{
+            padding: 40px 0 20px;
+        }
+    }
+    
+    .margin-auto {
+        margin: 0 auto;
+    }
+
+    .hfix {
+        height: 800px;
+    }
+
+    @media (min-width: 568px) { //small mobile
+        .container {
+            max-width: 540px;
+        }
+        
+    }
+
+    @media (min-width: 768px) { //large mobile 
+        .container {
+            max-width: 720px;
+        }
+    }
+
+    @media (min-width: 992px) { //tablet
+        .container {
+            max-width: 960px;
+        }
+    }
+
+    @media (min-width: 1200px) { //desktop
+        .container {
+            max-width: 1280px;
+        }
+    }
+    @include xs {
+        --pdSection: 70px 0;
+    }
+}

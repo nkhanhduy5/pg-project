@@ -1,0 +1,165 @@
+header {
+    width: 100%;
+    height: var(--height-header);
+    position: fixed;
+    z-index: 1000;
+    background: linear-gradient(180deg, rgba(139, 144, 141, 0.4) 54.5%, rgba(255, 255, 255, 0) 100%);
+
+    &.active {
+        background: $black-00; 
+        @include transition($t);
+    }
+    .container-fluid {
+        height: 100%;
+        position: relative;
+        @include mid;
+        justify-content: space-between;
+        .child {
+            padding: 0;
+            justify-content: left;
+            gap: 6rem;
+        }
+    }
+    .logo {
+        .hidden {
+            display: none;
+        }
+        a {
+            img {
+                display: block;
+            }
+        }
+    }
+    .menu {
+        height: 100%;
+        @include mid;
+
+        li {
+            height: 100%;
+            &:first-child {
+                padding-left: 0;
+            }
+            padding: 0 var(--gap);
+            a {
+                height: 100%;
+                @include mid;
+                @include text(var(--body18-fz), $normal, var(--body18-lh),$color);
+                font-weight: bold;
+                @include transition($t);
+                position: relative;
+                &:after {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background: $green-01;
+                    position: absolute;
+                    bottom: 1.5rem;
+                    @include transition(0.5s);
+                    transform: scale(0);
+                    transform-origin: center;
+                }
+                &:hover {
+                    opacity: 1;
+                    transform: scale(1.1);
+                    color: $green-01;
+                    &::after {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+                &.active {
+                    color: $green-01;
+                    opacity: 1;
+                    &::after {
+                        opacity: 1;
+                        transform: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    .contact {
+        @include mid;
+        gap: var(--gap);
+        height: 100%;
+        li {
+            a {
+                height: 100%;
+                img {
+                    &:hover {
+                        opacity: 1;
+                        @include transition($t);
+                        transform: scale(1.5);
+                    }
+                }
+            }
+            
+        }
+        @include sm {
+            .btnmenu {
+                display: block;
+                position: relative;
+                @include size(40px,22px);
+                z-index: 1000;
+                cursor: pointer;
+                opacity: 1;
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 3px;
+                    background: $green-01;
+                    @include mid(false);
+                }
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 3px;
+                    background: $white-00;
+                    position: absolute;
+                    top: 0;
+                    @include transition($t);
+                }
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 3px;
+                    background: $green-01;
+                    position: absolute;
+                    bottom: 0;
+                    @include transition($t);
+                }
+                &.active {
+                    opacity: 1;
+                    @include transition($t);
+                    span {
+                        opacity: 0;
+                    }
+                    &::before {
+                        top: 10px;
+                        transform: rotate(45deg);
+                        @include transition($t);
+                    }
+                    &::after {
+                        top: 10px;
+                        transform: rotate(-45deg);
+                        @include transition($t);
+                    }
+                }
+            }
+        }
+    }
+    @include maxW(1160px) {
+        --pdMenu: 15px;
+    }
+    @include sm {
+        .menu {
+            display: none;
+        }
+    }
+    @include xs {
+        .right {
+            gap: 15px;
+        }
+    }
+}

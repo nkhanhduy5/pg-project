@@ -1,0 +1,35 @@
+.nav {
+    display: none;
+
+    @include sm {
+        display: block;
+        @include fullscreen(true);
+        background: $grey-100;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        @include transition($t);
+        @include transform(translateX(100%));
+        
+        ul {
+            text-align: center;
+            @include mid(false);
+            li {
+                padding: 15px 0;
+                a {
+                    padding: 15px 0;
+                    @include text (var(--body16-fz), $normal, var(--body16-lh), $white-00);
+                    &:hover {
+                        color: $yellow-cl;
+                        @include transition($t);
+                    }
+                }
+            }
+        }
+        &.active {
+            opacity: 1;
+            pointer-events: auto;
+            @include transform(translateX(0%));
+        }
+    }
+}

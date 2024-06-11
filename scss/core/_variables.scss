@@ -1,0 +1,84 @@
+/*BOXED LAYOUT*/
+$container-max-width: 1920px;
+$container-width: 1005px;
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 576px; // adjustable
+$xs-min: 768px; // fixed
+$sm-min: 992px; // fixed
+$md-min: 1200px; // fixed
+$lg-min: 1600px; // adjustable
+
+$xxs-max: ($xxs-min - 1); // small mobile
+$xs-max: ($xs-min - 1); // mobile
+$sm-max: ($sm-min - 1); // tablet
+$md-max: ($md-min - 1); // desktop
+$lg-max: ($lg-min - 1); // large desktop
+
+/*Unchanged variables in responsive*/
+// colors - adjustable
+$green-00: #059441;
+$green-01: #43A34B;
+$white-00: #ffffff;
+$black-00: #1A1919;
+$grey-00: #8B908D;
+
+// timing transition - adjustable
+$t: 0.4s;
+$cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
+
+// text 
+$normal: "Montserrat";
+
+//color
+$color: $white-00;
+
+/*Changed variables in responsive*/
+:root {
+    // font-size & line-height heading
+    --h1-fz: 6rem;
+    --h1-lh: 9rem;
+
+    --h2-fz: 4rem;
+    --h2-lh: 4rem;
+
+    --h3-fz: 2.8rem;
+    --h3-lh: 3.5rem;
+
+    --body18-fz: 1.8rem;
+    --body18-lh: 2.2rem;
+    --body18-lh-odd: 2rem;
+
+    --body16-fz: 1.6rem;
+    --body16-lh: 2rem;
+
+    // General Variable
+    --gap: 30px; // gap for container & container-fluid's column & padding
+
+    --height-header: 100px;
+    --height-button: 32px;
+    --ptop: 100px;
+    --pd-section: 50px;
+
+    @media (max-width: $sm-max) {
+        // Tablet
+    }
+    @media (max-width: $xs-max) {
+        // Mobile
+        --h1-fz: 6.5rem;
+        --h1-lh: 4.2rem;
+
+        --h2-fz: 2.8rem;
+        --h2-lh: 3.8rem;
+
+        --h3-fz: 3rem;
+        --h3-lh: 6.5rem;
+
+        --h4-fz: 2rem;
+        --h4-lh: 3.2rem;
+
+        --height-header: 70px;
+        --pd-section: 50px;
+        --ptop: 120px;
+    }
+}

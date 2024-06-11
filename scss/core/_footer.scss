@@ -1,0 +1,51 @@
+footer {
+    height: 466px;
+    width: 100%;
+    position: relative;
+    .container {
+        height: 100%;
+        @include mid;
+        padding: 0 76px;
+        justify-content: space-between;
+        position: relative;
+        @include text(1.2rem, $normal, 2.2rem, $color);
+        .flex-clm {
+            max-width: 345px;
+            gap: 20px;
+            .logo {
+                margin-right: auto;
+                max-width: 221px;
+            }
+            .info {
+                @include mid;
+                flex-direction: column;
+                gap: 5px;
+                align-items: flex-start;
+                li {
+                    &:first-child {
+                    @include text(1.5rem, $normal, 1.8rem, $color);
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                    }
+                    strong {
+                        font-weight: bold;
+                    }
+                    a {
+                        @include text(1.5rem, $normal, 2.5rem, $color);
+                        &:hover {
+                            color: $green-01;
+                            @include transition($t);
+                        }
+                    }
+                }
+            }
+            &:nth-child(2) {
+                height: 350px;
+                justify-content: flex-start;
+            }
+        }
+    }
+    .flex-row {
+        @include text(1.2rem, $normal, 2.2rem, $color);
+    }
+}
