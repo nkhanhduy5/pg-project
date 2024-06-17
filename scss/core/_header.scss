@@ -71,6 +71,9 @@ header {
                         }
                     }
                 }
+                @include sm {
+                    display: none;
+                }
             }
         }
     }
@@ -100,9 +103,6 @@ header {
         --pdMenu: 15px;
     }
     @include sm {
-        .menu {
-            display: none;
-        }
         .btnmenu {
             display: block;
             position: relative;
@@ -174,5 +174,8 @@ header {
         .contact {
             display: none;
         }
+    }
+    &.bg {
+        background: $black-00;
     }
 }

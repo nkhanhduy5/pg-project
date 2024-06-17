@@ -1,0 +1,105 @@
+.page {
+    .container {
+        .main__heading {
+            margin: 0 auto;
+            &:first-child{
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 5px;
+                    background-color: $grey-00;
+                    position: absolute;
+                    transform: translate(10px,17px);
+                    border-radius: 10px;    
+                }
+            }
+            &.--plain {
+                margin-left: 0;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .option__field {
+            .textbox {
+                margin-bottom: 0;
+            }
+        }
+        .quotation {
+            &__table {
+                width: 100%;
+                position: relative;
+                p {
+                    text-align: center;
+                    font-weight: bold;
+                }
+                table {
+                    width: 100%;
+                    overflow: hidden;
+                    border: 2px solid $color;
+                    border-collapse: separate;
+                    border-radius: 10px;
+                    th,tr,td {
+                        height: 50px;
+                        border: 1px solid $color;
+                        padding: 12px 0;
+                        text-align: center;
+                    }
+                    th {
+                        background-color: $green-00;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+                }
+                .logo-mark {
+                    @include mid(false);
+                    z-index: -1;
+                    opacity: 0.2;
+                }
+            }
+        }
+    }
+}
+.contact__form {
+    padding: var(--pdSection);
+    background: linear-gradient(180deg, rgba(26, 25, 25, 0.8) 0%, rgba(139, 144, 141, 0.4) 54.5%, rgba(255, 255, 255, 0) 100%);
+    height: 500px;
+    .container {
+        gap: var(--gap);
+        .quotation__group {
+            &__item {
+                span {
+                    &::after {
+                        content: ' *';
+
+                    }
+                }
+            }
+        }
+        .text-area {
+            width: 100%;
+            height: 136px;
+            span {
+                &::after {
+                    display: none;
+                }
+            }
+            textarea {
+                @include size(100%,100%);
+                padding: 16px;
+                border: 1px solid $color;
+                border-radius: 5px;
+                background: transparent;
+                @include text(var(--body12-fz),$normal,var(--body12-lh),$color);
+                &:focus {
+                    border: none;
+                    outline: solid $green-01;
+                }
+            }
+        }
+        .textbox {
+            text-align: center;
+        }
+    }
+}
+

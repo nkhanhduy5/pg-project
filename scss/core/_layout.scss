@@ -37,6 +37,9 @@ body {
 
     .pd {
         padding: var(--pdSection);
+        &.page {
+            padding-top: 160px;
+        }
     }
     
     .margin-auto {

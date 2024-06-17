@@ -5,22 +5,6 @@ showMenu.on('click', function() {
     $(this).toggleClass('active');
     showNav.toggleClass('active');
 })
-//scroll to section
-// let menuSect = $('header .menu li a');
-// let removeMenu = function() {
-//     menuSect.removeClass('active');
-// }
-// menuSect.on('click', function(e) {
-//     e.preventDefault();
-//     let className = $(this).attr('href').replace('#','');
-//     let getSect = $('.' + className);
-//     window.scrollTo({
-//         top: getSect.offset().top - heightHeader + 1,
-//         behavior: 'smooth'
-//     })
-//     removeMenu();
-//     $(this).addClass('active');
-// })
 
 let menuSect = document.querySelectorAll('main .slider .slider__list .slider__item .slider__content a');
 let sections = [];
