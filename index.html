@@ -27,7 +27,7 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v20.0" nonce="HJ89z98Z"></script>
     <header class="active">
         <div class="container-fluid">
-            <div class="container-fluid child">
+            <div class="container-fluid__logo flex-row">
                 <div class="logo">
                     <a href="./"><img src="img/logo.svg" alt="PG"></a>
                 </div>
@@ -52,6 +52,9 @@
                     <a href="https://www.instagram.com/pgdesign336/" target="_blank"><img src="img/insta.svg" alt="instagram"></a>
                 </li>
             </ul>
+            <div class="btnmenu">
+                <span></span>
+            </div>
         </div>
     </header>
     <main>
@@ -64,9 +67,9 @@
                         <a href="#about" class="slider__btn">
                             <span>Tìm hiểu thêm</span>
                         </a>
-                        <img src="img/arrow-right.svg" alt="next">
+                        <img src="img/arrow-down.png" alt="next">
                     </div>
-                    <img src="img/slide1.jpg" alt="" class="slider__content-img">
+                    <img src="img/slide1.jpg" alt="" class="slider__item__bg">
                 </div>
                 <div class="slider__item">
                     <div class="slider__content">
@@ -74,9 +77,9 @@
                         <a href="#about" class="slider__btn">
                             <span>Tìm hiểu thêm</span>
                         </a>
-                        <img src="img/arrow-right.svg" alt="next">
+                        <img src="img/arrow-down.png" alt="next">
                     </div>
-                    <img src="img/slide2.jpg" alt="" class="slider__content-img">
+                    <img src="img/slide2.jpg" alt="" class="slider__item__bg">
                 </div>
                 <div class="slider__item">
                     <div class="slider__content">
@@ -84,41 +87,39 @@
                         <a href="#about" class="slider__btn">
                             <span>Tìm hiểu thêm</span>
                         </a>
-                        <img src="img/arrow-right.svg" alt="next">
+                        <img src="img/arrow-down.png" alt="next">
                     </div>
-                    <img src="img/slide3.jpg" alt="" class="slider__content-img">
+                    <img src="img/slide3.jpg" alt="" class="slider__item__bg">
                 </div>
             </div>
             <div class="slider__page">
-                <div class="container-fluid">
-                    <div class="slider__page__no">
-                        <div class="page__no">
-                            <span class="number">01</span>
-                        </div>
-                        <ul class="page__dot">
-                            <li class="dot active"></li>
-                            <li class="dot"></li>
-                            <li class="dot"></li>
-                            <li class="dot"></li>
-                        </ul>
+                <div class="slider__page__no flex-row">
+                    <div class="page__no">
+                        <span class="number">01</span>
                     </div>
+                    <ul class="page__dot">
+                        <li class="dot active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                    </ul>
                 </div>
             </div>
         </section>
         <!-- Giới thiệu công ty -->
         <section class="about section pd">
             <div class="container flex-clm">
-                <div class="float">
+                <div class="float flex-clm">
                     <p>“Chúng tôi xây dựng không gian theo cách bạn mơ ước, để mỗi góc nhìn là một phần câu chuyện riêng của chính bạn.”</p>
                     <p>Building the way YOU DESIRE!</p>
                 </div>
                 <h2 class="main__heading --h2">GIỚI THIỆU CÔNG TY</h2>
                 <div class="section__main">
-                    <div class="section__left">
+                    <div class="section__left maxwid--small">
                         <img src="img/about-2.jpg" alt="about-2">
                     </div>
-                    <div class="section__right flex-clm">
-                        <div class="main__text maxwid">
+                    <div class="section__right flex-clm maxwid">
+                        <div class="main__text">
                             <p class="textbox">CÔNG TY TNHH KIẾN TRÚC XÂY DỰNG NỘI THẤT PG chuyên hoạt động chuyên sâu trong lĩnh vực Kiến trúc - Xây dựng - Nội thất, bao gồm như: Tư vấn Thiết kế Kiến Trúc - Xây dựng - Nội thất - Thi công hoàn thiện.</p>
                             <p class="textbox">PG luôn luôn theo sát từng bước đi của mỗi sản phẩm, từ sự khởi đầu của những ý tưởng đến việc hoàn thành dự án với chất lượng cao nhất để bàn giao tới Chủ đầu tư. PG phát triển mỗi dự án với tiêu chí sáng tạo, dựa trên những đặc điểm riêng biệt của các điều kiện hình thành tương ứng, bao gồm:<br>hiện trạng, yêu cầu công năng, thẩm mỹ và ngân sách đầu tư.</p>
                             <p class="textbox">Với sự chuyên nghiệp và tâm huyết, PG thấu hiểu thực hiện ý tưởng độc đáo của khách hàng, tạo dựng hình ảnh chất lượng và tinh tế trong từng dự án.</p>
@@ -138,7 +139,7 @@
                     <div class="titleimg">
                         <img src="img/lydo-1.png" alt="ly-do">
                     </div>
-                    <div class="main__text maxwid--410 --mt100">
+                    <div class="main__text maxwid--small --mt100">
                         <p class="textbox --withspce">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                         </p>
@@ -147,7 +148,7 @@
                             <img src="img/arrow-right.svg" alt="next">
                         </a>
                     </div>
-                    <div class="circle__group">
+                    <div class="circle__group maxwid">
                         <div class="group__item">
                             <div class="item__img">
                                 <img src="img/circle1.jpg" alt="thanh-tich">
@@ -179,21 +180,21 @@
                     <div class="flex-row">
                         <a href="#" class="tag__link">
                             <img src="img/xay-dung.png" class ="img-tag" alt="tag">
-                            <img src="img/gallery3.jpg" class ="img-main" alt="xây dựng">
+                            <img src="img/gallery-2.jpeg" class ="img-main" alt="xây dựng">
                         </a>
                         <a href="#" class="tag__link">
                             <img src="img/noi-that.png" class ="img-tag  --btm" alt="tag">
-                            <img src="img/gallery3.jpg" class ="img-main" alt="nội thất">
+                            <img src="img/gallery-1.jpeg" class ="img-main" alt="nội thất">
                         </a>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Quy trình thiết kế -->
-        <section class="section pd hfix zoompic">
+        <section class="section pd zoompic">
             <div class="container flex-clm">
                 <h2 class="main__heading --h2 --reverse">QUY TRÌNH THIẾT KẾ</h2>
-                <div class="main__text">
+                <div class="option__field">
                     <p class="textbox --withspce">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                     </p>
@@ -220,7 +221,7 @@
             <img src="img/quy-trinh-bg.png" alt="" class="bg-img">
         </section>
         <!-- Dự án gần nhất -->
-        <section class="section pd--2">
+        <section class="section pd">
             <div class="container flex-clm">
                 <h2 class="main__heading --h2">DỰ ÁN GẦN NHẤT</h2>
             </div>
@@ -249,14 +250,14 @@
         <section class="section pd">
             <div class="container flex-row sns">
                 <div class="tiktok">
-                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@pg_interior_design" data-unique-id="pg_interior_design" data-embed-type="creator" style="max-width: 780px; min-width: 530px;" > 
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@pg_interior_design" data-unique-id="pg_interior_design" data-embed-type="creator" > 
                         <section> <a target="_blank" href="https://www.tiktok.com/@pg_interior_design?refer=creator_embed">@pg_interior_design</a> </section> 
                     </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
                 </div>
                 <div class="flex-clm">
                     <div class="fb-page"
                         data-href="https://www.facebook.com/thietkethicongnoithatPG/"
-                        data-width="380"
+                        data-width=""
                         data-hide-cover="false"
                         data-show-facepile="false">
                     </div>
@@ -290,7 +291,7 @@
                     <li><a href="#">Quy trình thi công</a></li>
                 </ul>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d979.6526682820186!2d106.711919!3d10.841077!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529cf4f51dcef%3A0xb6acb445e63ab5d4!2zQ8O0bmcgVHkgVE5ISCBLaeG6v24gVHLDumMgWMOieSBE4buxbmcgTuG7mWkgVGjhuqV0IFBH!5e0!3m2!1svi!2sus!4v1718014237179!5m2!1svi!2sus" width="466" height="350" style="border-radius:35px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="ggmap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d979.6526682820186!2d106.711919!3d10.841077!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529cf4f51dcef%3A0xb6acb445e63ab5d4!2zQ8O0bmcgVHkgVE5ISCBLaeG6v24gVHLDumMgWMOieSBE4buxbmcgTuG7mWkgVGjhuqV0IFBH!5e0!3m2!1svi!2sus!4v1718014237179!5m2!1svi!2sus" style="border-radius:35px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <span class="credit flex-row">Copyright © 2024 CÔNG TY TNHH KIẾN TRÚC XÂY DỰNG NỘI THẤT PG. All Rights Reserved.</span>
         <div class="bg-img">

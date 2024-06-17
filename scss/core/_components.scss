@@ -126,4 +126,10 @@ article {
             @include transition($t);
         }
     } 
+    @include xs {
+        height: 350px;
+        .gallery-cell {
+            height: 280px;
+        }
+    }
 }

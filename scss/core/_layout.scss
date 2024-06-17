@@ -27,7 +27,6 @@ body {
     .container-fluid {
         width: 100%;
         margin: 0 auto;
-        padding: 0 8rem;
     }
 
     .container {
@@ -38,9 +37,6 @@ body {
 
     .pd {
         padding: var(--pdSection);
-        &--2{
-            padding: 40px 0 20px;
-        }
     }
     
     .margin-auto {
@@ -50,7 +46,8 @@ body {
     .hfix {
         height: 800px;
     }
-
+    
+    
     @media (min-width: 568px) { //small mobile
         .container {
             max-width: 540px;
@@ -75,7 +72,10 @@ body {
             max-width: 1280px;
         }
     }
+    @include md {
+        --pdSection: 64px 0 48px;
+    }
     @include xs {
-        --pdSection: 70px 0;
+        --pdSection: 36px 0 16px;
     }
 }

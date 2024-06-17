@@ -1,11 +1,13 @@
 footer {
-    height: 466px;
     width: 100%;
     position: relative;
+    .flex-row {
+        @include text(1.2rem, $normal, 2.2rem, $color);
+    }
     .container {
         height: 100%;
         @include mid;
-        padding: 0 76px;
+        padding: var(--pdLR);
         justify-content: space-between;
         position: relative;
         @include text(1.2rem, $normal, 2.2rem, $color);
@@ -44,8 +46,39 @@ footer {
                 justify-content: flex-start;
             }
         }
+        .ggmap {
+            width: 30%;
+            height: 350px;
+        }
+        @include sm {
+            .flex-clm {
+                max-width: 300px;
+            }
+        }
+        @include xs {
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+            --pdLR: 0 16px;
+            .flex-clm {
+                max-width: 100%;
+                .logo{
+                    @include size(98px,88px);
+                    margin: 0 auto;
+                }
+                &:nth-child(2) {
+                    height: 145px;
+                }
+            }
+            .ggmap {
+                width: 100%;
+                height: 250px;
+                margin-bottom: 20px;
+            }
+        }
     }
-    .flex-row {
-        @include text(1.2rem, $normal, 2.2rem, $color);
+    .credit {
+        padding: 0 16px;
+        text-align: center;
     }
 }

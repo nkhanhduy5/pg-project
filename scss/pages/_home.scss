@@ -2,11 +2,16 @@
     position: relative;
     @include size(100%,100vh);
     overflow: hidden;
+    //arrow-down responsive
+    --height-arrow: 60px;
+    --width-arrow: 15px;
+    --letter-spacing: 0.5rem;
     &__list {
         @include size(100%,100%);
         .slider__item {
             @include size(100%, 100%);
             display: none;
+            position: relative;
             &.active {
                 display: block;
                 &::before{
@@ -22,42 +27,38 @@
 
             .slider__content {
                 max-width: 515px;
-                height: 50%;
                 display: flex;
                 flex-direction: column;
                 gap: var(--gap);
-                @include mid(false);
-                left: 33%;
+                position: absolute;
+                margin: var(--mgH1);
                 z-index: 2;
 
                 .main__heading {
-                    letter-spacing: 0.5rem;
+                    letter-spacing: var(--letter-spacing);
                 }
                 img {
                     position: relative;
-                    @include transform(rotate(90deg));
-                    left: -20px;
-                    width: 60px;
+                    @include size(var(--width-arrow),var(--height-arrow));
                     cursor: pointer;
                     @include animation(scrldown 1.5s infinite);
                     @keyframes scrldown {
                         0% {
-                            top: -5%;
+                            height: 0px;
                             opacity: 0;
                         }
                         50% {
-                            top: 10%;
+                            height: calc(var(--height-arrow) - 2px);
                             opacity: 1;
                         }
                         100% {
-                            top: 10%;
+                            height: var(--height-arrow);
                             opacity: 0;
                         }
                     }
                 }
-                
             }
-            .slider__content-img {
+            &__bg {
                 min-width: 100%;
                 min-height: 100%;
                 z-index: -1;
@@ -65,48 +66,45 @@
         }
     }
     &__page {
-        @include mid(false);
-        top: 40%;
-        left: -5%;
+        position: absolute;
+        --top-pageNo:40%;
+        top: var(--top-pageNo);
         z-index: 2;
+        max-width: 200px;
         @include transform(rotate(90deg));
-        
-        .container-fluid {
-            .slider__page__no {
+        &__no {
+            @include mid;
+            gap: var(--gap);
+            .page__no {
+                 @include mid;
+                @include text(var(--h2-fz),$normal,var(--h2-lh),$color);
+                font-weight: bold;
+                width: 110px;
+                &::before {
+                    content: "";
+                    width: 30px;
+                    height: 4px;
+                    background-color: $color;
+                    margin-right: 5px;
+                    }
+            }
+            .page__dot {
                 @include mid;
-                gap: var(--gap);
-                .page__no {
-                    @include mid;
-                    @include text(var(--h2-fz),$normal,var(--h2-lh),$color);
-                    font-weight: bold;
-                    width: 110px;
-
-                    &::before {
-                        content: "";
-                        width: 30px;
-                        height: 4px;
+                gap: 14px;
+                .dot {
+                    @include size(10px,10px);
+                    @include br(50%);
+                    cursor: pointer;
+                    background-color: $black-00;
+                    opacity: 0.5;
+                    &.active {
                         background-color: $color;
-                        margin-right: 5px;
-                        }
-                }
-                .page__dot {
-                    @include mid;
-                    gap: 14px;
-                    .dot {
-                        @include size(10px,10px);
-                        @include br(50%);
-                        cursor: pointer;
-                        background-color: $black-00;
-                        opacity: 0.5;
-                        &.active {
-                            background-color: $color;
-                            opacity: 1;
-                            @include size(15px,15px);
-                        }
-                        &:hover {
-                            background-color: $color;
-                            @include transition($t);
-                        }
+                        opacity: 1;
+                        @include size(15px,15px);
+                    }
+                    &:hover {
+                        @include transition($t);
+                        background-color: $color;
                     }
                 }
             }
@@ -114,56 +112,42 @@
     }
     @include md {
         --height-Slider: 850px;
+        --height-arrow: 48px;
+        --width-arrow: 12px;
         height: var(--height-Slider);
+        &__page {
+            --top-pageNo:40%;
+        }
     }
     @include sm {
-        --height-Slider: 600px;
-        &__list {
-            .slider__content-img {
-                max-width: initial;
-                height: 100%;
-                @include mid(false);
-            }
-        }
-        &__bottom {
-            .container-fluid {
-                .slider__bottom-mouse {
-                    .mouse {
-                        display: none;
-                    }
-                }
-            }
-        }
+        --height-Slider: 615px;
+        --gap: 20px;
     }
     @include xs {
-        --letter-spacing: 0.5rem;
+        --letter-spacing: 0rem;
         &__list {
             .slider__item {
                 .slider__content {
-                    .slider__btn {
-                        font-size: var(--body12-fz);
-                        line-height: var(--body12-lh);
-                        --gapBtn: 15px;
-                        max-width: 200px;
+                    max-width: 400px;
+                    img {
+                        margin: 0 auto;
                     }
+                }
+                &.__bg {
+                    max-width: initial;
+                    height: 100%;
+                    @include mid(false);
                 }
             }
         }
-        &__bottom {
-            .container-fluid {
-                .slider__bottom__page {
-                    .page__number {
-                        &::before {
-                            display: none;
-                        }
-                    }
-                    .page__dot {
-                        display: none;
-                    }
-                }
-                .slider__bottom-ctrl {
-                    @include size(90px,30px);
-                    margin-bottom: 10px;
+        &__page {
+            @include transform(rotate(0deg));
+            @include mid(false);
+            top: 95%;
+            margin: 0 auto;
+            &__no {
+                .page__no {
+                    display: none;
                 }
             }
         }
@@ -174,9 +158,9 @@
     .container {
         justify-content: flex-start;
         gap: var(--gap);
-        max-height: 740px;
         position: relative;
-        padding: 0 76px;
+        padding: var(--pdLR);
+        overflow-x: clip;
         .main__heading {
             margin-left: auto;
             &::before {
@@ -203,6 +187,18 @@
                     transform: translate(15px,17px);
                     border-radius: 10px;
                 }
+                @include xs {
+                    margin-left: auto;
+                }
+            }
+            @include xs {
+                margin: 0 auto;
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    display: none;
+                }
             }
         }
         .section__main {
@@ -210,16 +206,18 @@
             justify-content: space-between;
             width: 100%;
             .section__left {
-                max-width: 410px;
-                max-height: 650px;
+                height: 650px;
                 border-radius: 35px;
                 overflow: hidden;
                 img {
                     @include size(100%,100%);
+                    object-fit: cover;
+                }
+                @include xs {
+                    height: 350px;
                 }
             }
             .section__right {
-                height: 650px;
                 &__img {
                     max-height: 280px;
                     border-radius:50px;
@@ -237,17 +235,27 @@
                 }
             }
             .titleimg {
-                @include mid(false);
-                top: 0;
-                left: 20%;
+                position: absolute;
+                transform: translate(-10%,-120%);
+                @include sm {
+                    max-width: 300px;
+                    transform: translate(-5%,-240%);
+                }
+                @include xs {
+                    transform: translateX(0);
+                    transform: rotate(15deg);
+                    top: -10%;
+                }
             }   
             .circle__group {
-                width: 540px;
                 position: relative;
+                --width-circle: 220px;
+                --height-circle: 220px;
+                --x-y-cirlce: 10%,30%;
                 .group__item {
                     .item__img {
                         cursor: pointer;
-                        @include size(220px,220px);
+                        @include size(var(--width-circle),var(--height-circle));
                         background: $white-00;
                         border: 5px solid $white-00;
                         border-radius: 50%;
@@ -266,11 +274,26 @@
                     }
                     &:nth-child(2) {
                         @include mid(false);
-                        left: 80%;
-                        bottom: -20%;
+                        transform: translate(0%,-60%);
                     }
                     &:last-child {
-                        transform: translate(16%,20%);
+                        transform: translate(var(--x-y-cirlce));
+                    }
+                }
+                @include md {
+                    --width-circle: 180px;
+                    --height-circle: 180px;
+                    --x-y-cirlce: 5%,10%;
+                }
+                @include xs {
+                    margin: 35px 0 30px;
+                    --width-circle: 150px;
+                    --height-circle: 150px;
+                    --x-y-cirlce: 12%,20%;
+                    .group__item {
+                        &:nth-child(2) {
+                            transform: translate(15%,-60%);
+                        }
                     }
                 }
             }
@@ -292,17 +315,23 @@
                     }
                 }
             }
-
+            @include xs {
+                flex-direction: column-reverse;
+                .section__right {
+                    flex-direction: column-reverse;
+                }
+            }
         }
         //Lĩnh vực thiết kế
         .option__field {
             .flex-row {
-                margin-top: 60px;
-                gap: 160px;
+                margin: 70px auto 0;
+                justify-content: space-around;
                 .tag__link {
                     position: relative;
                     cursor: pointer;
                     filter: grayscale(100%);
+                    width: calc(100%/2 - 32px - var(--gap));
                     .img-tag {
                         @include mid(false);
                         top: 0%;
@@ -313,17 +342,26 @@
                     .img-main {
                         border-radius: 30px;
                         overflow: hidden;
-                        max-width: 350px;
-                        height: 380px;
+                        width: 100%;
+                        height: 400px;
                         img {
                             @include size(100%,100%);
                             object-fit: cover;
+                        }
+                        @include sm {
+                            height: 350px;
+                        }
+                        @include xs {
+                            height: 250px;
                         }
                     }
                     &:hover {
                         @include transition($t);
                         transform: scale(1.1);
                         filter: grayscale(0%);
+                    }
+                    @include xs {
+                        width: calc(100%/2 - 20px);
                     }
                 }
             }
@@ -332,21 +370,39 @@
             align-items: flex-start;
             .tiktok {
                 width: 100%;
+                .tiktok-embed {
+                    margin-top: 0;
+                }
             }
             .flex-clm {
                 .img-sns {
                     margin-top: 50px;
                 }
             }
-
+            @include xs {
+                flex-direction: column-reverse;
+                .flex-clm {
+                    align-items: center;
+                    width: 100%;
+                    flex-direction: column-reverse;
+                    .img-sns {
+                        margin-top: 0;
+                        width: 250px;
+                    }
+                }
+            }
         }
     }
 }
 //Quy trình thiết kế
 .zoompic {
     .container {
+        .option__field {
+            .textbox {
+                margin-bottom: 0;
+            }
+        }
         .flex-clm {
-            margin-right: auto;
             align-items: flex-start;
             gap: var(--gap);
             width: 100%;
@@ -420,203 +476,6 @@
                     display: block;
                 }
             }
-        }
-    }
-}
-// .gallery {
-//     background: $black-00;
-//     .container {
-//         .textbox {
-//             color: $white-00;
-//             .--h3 {
-//                 color: $white-00;
-//             }
-//         }
-//         @include sm {
-//             .gallery__list {
-//                 grid-template-columns: 1fr 1fr;
-//             }
-//         }
-//         @include xs {
-//             .gallery__list {
-//                 grid-gap: 6px;
-//                 grid-auto-rows: 120px;
-//             }
-//         }
-//     }
-// }
-.news {
-    .container {
-        color: $black-00;
-        .news__text {
-            margin-bottom: 20px;
-        }
-        .news__btn {
-            margin-bottom: 30px;
-            display: flex;
-            gap: 15px;
-            span {
-                background: $white-00;
-                cursor: pointer;
-                padding: 5px 10px;
-                @include text(var(--body16-fz), $normal, normal, $white-00, uppercase);
-                &:hover {
-                    opacity: 0.8;
-                    @include transition($t);
-                }
-                &.active {
-                    background: $white-00;
-                }
-            }
-        }
-        .group__link {
-            .news__group {
-                @include mid;
-                --column: 3;
-                --gap-count: 2;
-                --gap: 25px;
-                --spacing: calc(var(--gap) * var(--gap-count) / var(--column));
-                gap: var(--gap);
-                --height-img: 200px;
-                
-                .news__item {
-                    width: calc(100% / var(--column) - (var(--spacing)));
-                    .news__img {
-                        width: 100%;
-                        height: var(--height-img);
-                        overflow: hidden;
-                        margin-bottom: 53px;
-                        a {
-                            display: block;
-                            height: 100%;
-                            position: relative;
-                            img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                                @include mid(false);
-                                &:hover {
-                                    @include transition($t);
-                                    transform: translate(-50%,-50%) scale(1.1);
-                                }
-                            }
-                        }
-                    }
-                    .news__text {
-                        a {
-                            display: inline-block;
-                            @include text(var(--h4-fz), $normal, var(--h4-lh), $black-00);
-                            letter-spacing: 0.036rem;
-                            margin-bottom: 22px;
-                            position: relative;
-                            height: 50px;
-                            h4 {
-                                span {
-                                    display: block;
-                                }
-                                @include overtext(2);
-                            }
-                            &::before {
-                                content: "";
-                                width: 83px;
-                                height: 3px;
-                                background-color: $white-00;
-                                position: absolute;
-                                top: -50%;
-                                transform: translateY(-50%);
-                            }
-                        }
-                        p {
-                            @include overtext(3);
-                        }
-                    }
-                }
-            }
-            &.external {
-                display: none;
-            }
-        }
-        @include sm {
-            .news__group {
-                --height-img: 180px;
-            }
-        }
-        @include xs {
-            .news__group {
-                flex-direction: column;
-                height: auto;
-                --height-img: 260px;
-                .news__item {
-                    width: 100%;
-                    .news__img {
-                        margin-bottom: 40px;
-                    }
-                    .news__text {
-                        a {
-                            height: 30px;
-                            margin-bottom: 0;
-                            h4 {
-                                line-height: normal;
-                                span {
-                                    display: inline-block;
-                                }
-                            }
-                        }
-                        p {
-                            margin-top: 15px;
-                            display: initial;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-.popup-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    @include size (100vw,100vh);
-    background: rgba(0, 0, 0, 0.9);
-    @include mid;
-    display: none;
-    .iframe-wrap {
-        position: relative;
-        @include size (100%,100%);
-        max-width: 700px;
-        max-height: 400px;
-        border: 2px solid $white-00;
-        .popup-close {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: $white-00;
-            top: -5px;
-            right: -50px;
-            transform: translate(-50%,-50%);
-            cursor: pointer;
-            img {
-                width: 30px;
-                height: 30px;
-                @include mid(false);
-            }
-        }
-        @include sm {
-            margin: 0 20px;
-            .popup-close {
-                width: 30px;
-                height: 30px;
-                right: -30px;
-                img {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-        }
-        @include xs {
-            height: 300px;
         }
     }
 }
