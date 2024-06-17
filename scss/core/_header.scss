@@ -16,58 +16,59 @@ header {
         padding: 0 80px;
         &__logo {
             gap: 60px;
-        }
-    }
-    .logo {
-        @include size(78px,70px);
-        a {
-            img {
-                display: block;
-            }
-        }
-    }
-    .menu {
-        height: 100%;
-        @include mid;
-        li {
             height: 100%;
-            &:first-child {
-                padding-left: 0;
-            }
-            padding: 0 var(--gap);
-            a {
-                height: 100%;
-                @include mid;
-                @include text(var(--body18-fz), $normal, var(--body18-lh),$color);
-                font-weight: bold;
-                @include transition($t);
-                position: relative;
-                &:after {
-                    content: '';
-                    width: 100%;
-                    height: 2px;
-                    background: $green-01;
-                    position: absolute;
-                    bottom: 1.5rem;
-                    @include transition(0.5s);
-                    transform: scale(0);
-                    transform-origin: center;
-                }
-                &:hover {
-                    opacity: 1;
-                    transform: scale(1.1);
-                    color: $green-01;
-                    &::after {
-                        opacity: 1;
-                        transform: scale(1);
+            .logo {
+                @include size(78px,70px);
+                a {
+                    img {
+                        display: block;
                     }
                 }
-                &.active {
-                    color: $green-01;
-                    opacity: 1;
-                    &::after {
-                        opacity: 1;
-                        transform: none;
+            }
+            .menu {
+                height: 100%;
+                @include mid;
+                li {
+                    height: 100%;
+                    &:first-child {
+                        padding-left: 0;
+                    }
+                    padding: 0 var(--gap);
+                    a {
+                        height: 100%;
+                        @include mid;
+                        @include text(var(--body18-fz), $normal, var(--body18-lh),$color);
+                        font-weight: bold;
+                        @include transition($t);
+                        position: relative;
+                        &:after {
+                            content: '';
+                            width: 100%;
+                            height: 2px;
+                            background: $green-01;
+                            position: absolute;
+                            bottom: 1.5rem;
+                            @include transition(0.5s);
+                            transform: scale(0);
+                            transform-origin: center;
+                        }
+                        &:hover {
+                            opacity: 1;
+                            transform: scale(1.1);
+                            color: $green-01;
+                            &::after {
+                                opacity: 1;
+                                transform: scale(1);
+                            }
+                        }
+                        &.active {
+                            color: $green-01;
+                            opacity: 1;
+                            &::after {
+                                opacity: 1;
+                                transform: none;
+                            }
+                        }
                     }
                 }
             }
