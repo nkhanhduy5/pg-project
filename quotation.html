@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PG Construction & Interior</title>
+    <title>Tư vấn thiết kế</title>
     <link rel="icon" href="img/logo.svg">
     <!-- facebook -->
     <meta name="title" content="">
@@ -31,7 +31,7 @@
                 </div>
                 <ul class="menu">
                     <li><a href="#about">DỰ ÁN</a></li>
-                    <li><a href="#about">XÂY DỰNG</a></li>
+                    <li><a href="construction.html">XÂY DỰNG</a></li>
                     <li><a href="#about">NỘI THẤT</a></li>
                     <li><a href="quotation.html">TƯ VẤN THIẾT KẾ</a></li>
                 </ul>
@@ -55,11 +55,19 @@
             </div>
         </div>
     </header>
+    <nav class="nav">
+        <ul>
+            <li><a href="#">DỰ ÁN</a></li>
+            <li><a href="construction.html">XÂY DỰNG</a></li>
+            <li><a href="#">NỘI THẤT</a></li>
+            <li><a href="quotation.html">TƯ VẤN THIẾT KẾ</a></li>
+        </ul>
+    </nav>
     <main>
         <!-- Tư vấn thiết kế -->
-        <section class="section pd page">
+        <section class="section pd quotation__page">
             <div class="container flex-clm">
-                <h2 class="main__heading --h2">TƯ VẤN THIẾT KẾ</h2>
+                <h2 class="main__heading --h2 --list">TƯ VẤN THIẾT KẾ</h2>
                 <div class="option__field">
                     <p class="textbox --withspce">
                         Quý khách cần tư vấn, báo giá hoặc giải đáp các vấn đề từ thiết kế đến thi công hoàn thiện xin hãy để lại thông tin liên hệ, bộ phận chăm sóc khách hàng sẽ liên hệ lại quý khách ngay trong vòng 24h để hỗ trợ quý khách, đội ngũ PG Design xin chân thành cảm ơn!
@@ -74,22 +82,22 @@
                         <div class="wrapper__item">
                             <span>Chọn loại nhà</span>
                             <input type="text" placeholder="Nhà phố">
-                            <img src="img/drop-down.png" alt="select">
+                            <img src="img/drop-down.png" class="arrow-down" alt="select">
                         </div>
                         <div class="wrapper__item">
                             <span>Dịch vụ xây nhà</span>
                             <input type="text" placeholder="Xây nhà trọn gói">
-                            <img src="img/drop-down.png" alt="select">
+                            <img src="img/drop-down.png" class="arrow-down" alt="select">
                         </div>
                         <div class="wrapper__item">
                             <span>Mức đầu tư</span>
                             <input type="text" placeholder="TB - Khá">
-                            <img src="img/drop-down.png" alt="select">
+                            <img src="img/drop-down.png" class="arrow-down" alt="select">
                         </div>
                         <div class="wrapper__item">
                             <span>Mặt tiền</span>
                             <input type="text" placeholder="1">
-                            <img src="img/drop-down.png" alt="select">
+                            <img src="img/drop-down.png" class="arrow-down" alt="select">
                         </div>
                         <div class="wrapper__item">
                             <span>Chiều rộng (VD 2.5m)</span>
@@ -106,7 +114,7 @@
                         <div class="wrapper__item">
                             <span>Hẻm</span>
                             <input type="text" placeholder="Rộng từ 3-5m">
-                            <img src="img/drop-down.png" alt="select">
+                            <img src="img/drop-down.png" class="arrow-down" alt="select">
                         </div>
                         <div class="wrapper__item">
                             <span>Lửng (VD 30m2)</span>
@@ -119,27 +127,27 @@
                         <div class="wrapper__item">
                             <span>Sân thượng</span>
                             <input type="text" placeholder="Sân thượng">
-                            <img src="img/drop-down.png" alt="select">
+                            <img src="img/drop-down.png" class="arrow-down" alt="select">
                         </div>
                         <div class="wrapper__item">
                             <span>Ban công</span>
                             <input type="text" placeholder="Có ban công">
-                            <img src="img/drop-down.png" alt="select">
+                            <img src="img/drop-down.png" class="arrow-down" alt="select">
                         </div>
                         <div class="wrapper__item">
                             <span>Móng</span>
                             <input type="text" placeholder="Móng bằng">
-                            <img src="img/drop-down.png" alt="select">
+                            <img src="img/drop-down.png" class="arrow-down" alt="select">
                         </div>
                         <div class="wrapper__item">
                             <span>Tầng hầm</span>
                             <input type="text" placeholder="Không hầm">
-                            <img src="img/drop-down.png" alt="select">
+                            <img src="img/drop-down.png" class="arrow-down" alt="select">
                         </div>
                         <div class="wrapper__item">
                             <span>Mái</span>
                             <input type="text" placeholder="Mái tôn">
-                            <img src="img/drop-down.png" alt="select">
+                            <img src="img/drop-down.png" class="arrow-down" alt="select">
                         </div>
                         <div class="wrapper__item">
                             <span>Sân vườn (VD 10m2)</span>
@@ -224,6 +232,7 @@
         </section>
         <section class="section contact__form">
             <div class="container flex-clm">
+                <h3 class="main__heading --h3 --plain">Gửi báo giá chi tiết</h3>
                 <div class="wrapper">
                     <div class="wrapper__item">
                         <span>Họ và tên</span>
@@ -290,6 +299,5 @@
     <!-- <script src="/dest/main.js"></script> -->
     <script src="dest/jsmain.min.js"></script>
     <script src="dest/mainjquery.js"></script>
-    <script src="dest/flickity.pkgd.min.js"></script>
 </body>
 </html>

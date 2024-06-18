@@ -2,7 +2,7 @@ header {
     width: 100%;
     height: var(--height-header);
     position: fixed;
-    z-index: 1000;
+    z-index: 200;
     background: linear-gradient(180deg, rgba(139, 144, 141, 0.4) 54.5%, rgba(255, 255, 255, 0) 100%);
     &.active {
         background: $black-00; 
@@ -23,6 +23,9 @@ header {
                     img {
                         display: block;
                     }
+                }
+                @include sm {
+                    @include size(62px,56px);
                 }
             }
             .menu {
@@ -163,18 +166,11 @@ header {
             margin-right: var(--gap);
         }
     }
-    @include sm {
-        .logo {
-            @include size(62px,56px);
-        }
-    }
+    
     @include xs {
         .container-fluid {
             padding: 0 25px;
             justify-content: space-between;
-        }
-        .logo {
-            @include size(62px,56px);
         }
         .contact {
             display: none;

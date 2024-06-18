@@ -73,6 +73,25 @@ article {
     &.--h3 {
         @include text(var(--h3-fz),$normal,var(--h3-lh),$green-01);
     }
+    &.--list {
+        margin: 80px auto 0;
+        &::after {
+            content: "";
+            width: 100%;
+            height: 5px;
+            background-color: $grey-00;
+            position: absolute;
+            transform: translate(10px,17px);
+            border-radius: 10px;    
+        }
+    }
+    &.--plain {
+        margin-left: 0!important;
+        margin-right: auto;
+        &::before {
+            display: none;
+        }
+    }
 }
 .back-to-top {
     position: fixed;
@@ -97,6 +116,10 @@ article {
     @include size(100%,100%);
     overflow: hidden;
     z-index: -1;
+    &.fixed {
+        position: fixed;
+        top: 5%;
+    }
 }
 
 .main-gallery {
@@ -144,6 +167,10 @@ article {
             @include mid;
             height: 50px;
             position: relative;
+            a {
+                @include size(100%,100%);
+                @include text(var(--h3-fz),$normal,var(--h3-lh),$color);
+            }
             input {
                 background: transparent;
                 border: 1px solid $color;
@@ -161,10 +188,11 @@ article {
                 left: 5px;
                 top: -10px;
                 background-color: $black-00;
+                border-radius: 5px;
                 padding: 0 5px;
                 font-weight: 700;
             }
-            img {
+            .arrow-down {
                 position: absolute;
                 right: 5%;
                 @include xs {

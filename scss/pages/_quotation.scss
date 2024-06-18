@@ -1,25 +1,5 @@
-.page {
+.quotation__page {
     .container {
-        .main__heading {
-            margin: 0 auto;
-            &:first-child{
-                &::after {
-                    content: "";
-                    width: 100%;
-                    height: 5px;
-                    background-color: $grey-00;
-                    position: absolute;
-                    transform: translate(10px,17px);
-                    border-radius: 10px;    
-                }
-            }
-            &.--plain {
-                margin-left: 0;
-                &::before {
-                    display: none;
-                }
-            }
-        }
         .option__field {
             .textbox {
                 margin-bottom: 0;
@@ -67,9 +47,11 @@
 .contact__form {
     padding: var(--pdSection);
     background: linear-gradient(180deg, rgba(26, 25, 25, 0.8) 0%, rgba(139, 144, 141, 0.4) 54.5%, rgba(255, 255, 255, 0) 100%);
-    height: 500px;
     .container {
         gap: var(--gap);
+        .--plain {
+            color: $color;
+        }
         .wrapper {
             &__item {
                 span {

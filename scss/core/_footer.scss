@@ -1,6 +1,7 @@
 footer {
     width: 100%;
     position: relative;
+    z-index: 100;
     .flex-row {
         @include text(1.2rem, $normal, 2.2rem, $color);
     }

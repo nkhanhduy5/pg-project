@@ -3,8 +3,11 @@
 
     @include sm {
         display: block;
-        @include fullscreen(true);
-        background: $grey-100;
+        position: fixed;
+        top: 0;
+        right: 0;
+        @include size (29%,100%);
+        background: $black-00;
         z-index: 100;
         opacity: 0;
         pointer-events: none;
@@ -13,14 +16,15 @@
         
         ul {
             text-align: center;
+            width: 100%;
             @include mid(false);
             li {
                 padding: 15px 0;
                 a {
                     padding: 15px 0;
-                    @include text (var(--body16-fz), $normal, var(--body16-lh), $white-00);
+                    @include text (var(--body16-fz), $normal, var(--body16-lh), $color);
                     &:hover {
-                        color: $yellow-cl;
+                        color: $green-01;
                         @include transition($t);
                     }
                 }
@@ -31,5 +35,8 @@
             pointer-events: auto;
             @include transform(translateX(0%));
         }
+    }
+    @include xs {
+        @include size (100%,100%);
     }
 }

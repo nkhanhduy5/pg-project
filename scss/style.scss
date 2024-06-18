@@ -12,9 +12,12 @@
 
 /* Header & Nav & Footer */
 @import "core/header";
-// @import "core/nav";
 @import "core/footer";
+// @import "core/nav";
+@import "core/nav";
 
 /* Pages */
 @import "pages/home";
 @import "pages/quotation";
+@import "pages/list";
+@import "pages/details";

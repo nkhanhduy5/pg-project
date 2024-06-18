@@ -1,0 +1,53 @@
+.list {
+    .container {
+        .wrapper {
+            margin-top: 10px;
+            grid-template-columns: 1fr 1fr 1fr;
+            --height-card: 450px;
+            &__item {
+                height: var(--height-card);
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                span {
+                    display: none;
+                }
+                img {
+                    @include size(100%,100%);
+                    object-fit: cover;
+                }
+                &::after {
+                    content: '';
+                    @include size(100%,100%);
+                    background-color: $black-00;
+                    @include mid(false);
+                    opacity: 0;
+                }
+                &:hover {
+                    @include transition($t);
+                    transform: scale(1.05);
+                    span {
+                        @include mid;
+                        @include size(100%,100%);
+                        z-index: 5;
+                        background-color: transparent;
+                    }
+                    &::after {
+                        opacity: 0.5;
+                    }
+                }
+            }
+            @include md {
+                --height-card: 365px
+            }
+            @include sm {
+                --height-card: 300px;
+            }
+            @include xs {
+                grid-template-columns: 1fr 1fr;
+                --height-card: 250px;
+                grid-gap: 15px;
+            }
+        }
+    }
+}

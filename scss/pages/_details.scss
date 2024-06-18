@@ -1,0 +1,44 @@
+.details {
+    position: relative;
+    &.pd {
+        padding-top: 120px;
+    }
+    align-items: flex-start;
+    justify-content: space-between;
+    .image__list {
+        max-width: 66%;
+    }
+    .section__main {
+        width: 100%;
+        .main__text{
+            padding: 0 80px;
+            position: fixed;
+            gap: var(--gap);
+            @include sm {
+                padding-left: 32px;
+            }
+        }
+
+    }
+    @include xs {
+        &.pd {
+            padding-top: 56px;
+        }
+        flex-direction: column-reverse;
+        .image__list {
+            max-width: 100%;
+            padding: 0 16px;
+        }
+        .section__main {
+            text-align: center;
+            .main__heading {
+                color: $color;
+            }
+            .main__text {
+                position: relative;
+                padding: 0 16px;
+                gap: 15px;
+            }
+        }
+    }
+}

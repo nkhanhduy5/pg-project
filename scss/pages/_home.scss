@@ -193,7 +193,8 @@
                 }
             }
             @include xs {
-                margin: 0 auto;
+                margin-left: auto;
+                margin-right: auto;
                 &::before {
                     display: none;
                 }
