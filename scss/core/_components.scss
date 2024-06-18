@@ -133,3 +133,87 @@ article {
         }
     }
 }
+//grid display
+.wrapper {
+    @include text(var(--body16-fz),$normal,var(--body16-lh),$color);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: var(--gap);
+    width: 100%;
+        &__item {
+            @include mid;
+            height: 50px;
+            position: relative;
+            input {
+                background: transparent;
+                border: 1px solid $color;
+                border-radius: 5px;
+                padding: 0 15px;
+                @include size(100%,100%);
+                @include text(var(--body12-fz),$normal,var(--body12-lh),$color);
+                &:focus {
+                    border: none;
+                    outline: solid $green-01;
+                }
+            }
+            span {
+                position: absolute;
+                left: 5px;
+                top: -10px;
+                background-color: $black-00;
+                padding: 0 5px;
+                font-weight: 700;
+            }
+            img {
+                position: absolute;
+                right: 5%;
+                @include xs {
+                    @include size(15px,10px);
+                    right: 10%;
+                }
+            }
+        }
+        @include md {
+            @include text(1.2rem, $normal,1.8rem,$color);
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        @include sm {
+            grid-template-columns: 1fr 1fr;
+        }
+}
+//btn
+.slider__btn {
+    @include mid;
+    @include text(var(--body16-fz), $normal, var(--body16-lh), $color);
+    font-style: italic;
+    letter-spacing: 0.14rem;
+    max-width: 180px;
+    height: 50px;
+    padding: 15px 9px;
+    border: 1px solid $color;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+        @include transition($t);
+        background-color:$color;
+        color: $black-00;
+    }
+    @include sm {
+        height: 40px;
+    }
+    @include xs {
+        max-width: 150px;
+        margin: 0 auto;
+    }
+    &.--green {
+        background-color: $green-01;
+        font-weight: bold;
+        font-style: normal;
+        border: none;    
+        max-width: 250px;
+        &:hover {
+            background-color: $color;
+            border: 1px solid $color;
+        }
+    }
+}

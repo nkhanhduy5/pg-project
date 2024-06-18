@@ -145,42 +145,6 @@
     }
 }
 
-.slider__btn {
-    @include mid;
-    @include text(var(--body16-fz), $normal, var(--body16-lh), $color);
-    font-style: italic;
-    letter-spacing: 0.14rem;
-    max-width: 180px;
-    height: 50px;
-    padding: 15px 9px;
-    border: 1px solid $color;
-    border-radius: 10px;
-    cursor: pointer;
-    &:hover {
-        @include transition($t);
-        background-color:$color;
-        color: $black-00;
-    }
-    @include sm {
-        height: 40px;
-    }
-    @include xs {
-        max-width: 150px;
-        margin: 0 auto;
-    }
-    &.--green {
-        background-color: $green-01;
-        font-weight: bold;
-        font-style: normal;
-        border: none;    
-        max-width: 220px;
-        &:hover {
-            background-color: $color;
-            border: 1px solid $color;
-        }
-    }
-}
-
 .flex-clm {
     @include mid;
     flex-direction: column;
@@ -190,48 +154,3 @@
     @include mid;
 }
 
-.quotation {
-    width: 100%;
-    margin-left: 0;
-    gap: var(--gap);
-    align-items: flex-start;
-    &__group {
-        width: 100%;
-        gap: var(--gap);
-        justify-content: space-around;
-        @include text(var(--body16-fz),$normal,var(--body16-lh),$color);
-        &__item {
-            @include mid;
-            height: 50px;
-            width: calc(100%/4 - var(--gap));
-            position: relative;
-            input {
-                background: transparent;
-                border: 1px solid $color;
-                border-radius: 5px;
-                padding: 0 15px;
-                @include size(100%,100%);
-                @include text(var(--body12-fz),$normal,var(--body12-lh),$color);
-                &:focus {
-                    border: none;
-                    outline: solid $green-01;
-                }
-            }
-            span {
-                position: absolute;
-                left: 5px;
-                top: -10px;
-                background-color: $black-00;
-                padding: 0 5px;
-                font-weight: 700;
-            }
-            img {
-                position: absolute;
-                right: 5%;
-            }
-        }
-        @include md {
-            @include text(1.2rem, $normal,1.8rem,$color);
-        }
-    }
-}

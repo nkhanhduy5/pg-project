@@ -124,6 +124,7 @@
         --gap: 20px;
     }
     @include xs {
+        --height-Slider: 100vh;
         --letter-spacing: 0rem;
         &__list {
             .slider__item {
@@ -341,7 +342,6 @@
                     }
                     .img-main {
                         border-radius: 30px;
-                        overflow: hidden;
                         width: 100%;
                         height: 400px;
                         img {

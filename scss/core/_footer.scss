@@ -42,8 +42,7 @@ footer {
                 }
             }
             &:nth-child(2) {
-                height: 350px;
-                justify-content: flex-start;
+                margin: 30px 0 auto;
             }
         }
         .ggmap {
@@ -67,7 +66,7 @@ footer {
                     margin: 0 auto;
                 }
                 &:nth-child(2) {
-                    height: 145px;
+                    margin-top: 0;
                 }
             }
             .ggmap {
